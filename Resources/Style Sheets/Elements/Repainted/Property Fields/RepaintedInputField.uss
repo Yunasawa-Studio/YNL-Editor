@@ -1,0 +1,58 @@
+.Main
+{
+	background-color: transparent;
+	
+	border-color: transparent;
+
+	width: auto;
+	height: 20px;
+
+	margin-top: 0px;
+	margin-bottom: 1.5px;
+	margin-left: 3px;
+
+	justify-content: center;
+
+	flex-shrink: 1;
+	flex-grow: 1;
+
+	flex-direction: row;
+	
+	overflow: hidden;
+}
+
+.Label
+{
+	height: 20px;
+
+	-unity-text-align: middle-left;
+}
+
+.Field
+{
+	width: 100%;
+	height: 40px;
+
+	margin: 0px;
+
+	flex-grow: 1;
+}
+
+.Input
+{
+	height: 20px;
+
+	background-color: #282828;
+
+	border-radius: 2.5px;
+	border-width: 1px;
+	border-color: #282828;
+	
+	border-left-color: #1a1a1a;
+	border-top-color: #1a1a1a;
+}
+
+.Input_Enter
+{
+	border-color: #5F5F5F;
+}
