@@ -1,7 +1,6 @@
 #if UNITY_EDITOR
 using UnityEngine;
 using UnityEngine.UIElements;
-using YNL.Editors.Visuals;
 using YNL.Editors.Extensions;
 using YNL.Extensions.Methods;
 

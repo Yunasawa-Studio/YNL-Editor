@@ -65,6 +65,8 @@ namespace YNL.Editors.Visuals
             OnClick -= _action;
         }
 
+        public void Select() => OnClick?.Invoke();
+
         private static void OnPointerDown(PointerDownEvent evt)
         {
             var image = evt.currentTarget as StyledWindowTag;

@@ -44,7 +44,7 @@ namespace YNL.Editors.Visuals
             _inputField.DisableClass("Input_Enter");
         }
 
-        public void SetAsReadOnly()
+        public RepaintedTextField SetAsReadOnly()
         {
             Field.isReadOnly = true;
             _inputField.EnableClass("Input_ReadOnly");
@@ -52,6 +52,8 @@ namespace YNL.Editors.Visuals
 
             this.UnregisterCallback<MouseEnterEvent>(OnMouseEnter);
             this.UnregisterCallback<MouseLeaveEvent>(OnMouseLeave);
+
+            return this;
         }
     }
 }

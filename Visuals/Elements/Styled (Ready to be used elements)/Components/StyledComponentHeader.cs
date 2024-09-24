@@ -46,12 +46,12 @@ namespace YNL.Editors.Visuals
         #region Flex Component Icon
         public StyledComponentHeader AddIcon(string imagePath, MAddressType type)
         {
-            this.AddElements(_flexIcon.SetIcon(imagePath, type)).AddVSpace(3);
+            this.AddElements(_flexIcon.SetIcon(imagePath, type)).AddHSpace(3);
             return this;
         }
         public StyledComponentHeader AddIcon(Texture2D image)
         {
-            this.AddElements(_flexIcon.SetIcon(image)).AddVSpace(3);
+            this.AddElements(_flexIcon.SetIcon(image)).AddHSpace(3);
             return this;
         }
         public StyledComponentHeader SetIconColor(Color color)
