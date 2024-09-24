@@ -26,6 +26,7 @@ namespace YNL.Editors.Visuals
 
         public T ReferencedObject;
         private string _typeName;
+        private int _controlID;
 
         public RepaintedAssetField(T objectBinded = null) : base()
         {
@@ -75,7 +76,7 @@ namespace YNL.Editors.Visuals
         {
             string commandName = Event.current.commandName;
 
-            if (commandName == "ObjectSelectorUpdated")
+            if (commandName == "ObjectSelectorUpdated" && _controlID == EditorGUIUtility.GetObjectPickerControlID())
             {
                 ReferencedObject = (T)EditorGUIUtility.GetObjectPickerObject();
             }
@@ -132,9 +133,9 @@ namespace YNL.Editors.Visuals
 
         public void PointerDownOnSelection()
         {
-            int controlID = GUIUtility.GetControlID(FocusType.Passive);
+            _controlID = GUIUtility.GetControlID(FocusType.Passive);
 
-            EditorGUIUtility.ShowObjectPicker<T>(null, false, "", controlID);
+            EditorGUIUtility.ShowObjectPicker<T>(ReferencedObject, false, "", _controlID);
         }
         public void PointerEnterOnSelection()
         {

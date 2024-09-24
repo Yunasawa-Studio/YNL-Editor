@@ -25,7 +25,9 @@ namespace YNL.Editors.Visuals
         public Image PingIcon;
 
         public T ReferencedObject;
+        public GameObject GameObject;
         private string _typeName;
+        private int _controlID;
 
         public RepaintedComponentField(T bindedObject) : base()
         {
@@ -63,9 +65,25 @@ namespace YNL.Editors.Visuals
 
         public void OnGUI()
         {
-            if (Event.current.commandName == "ObjectSelectorUpdated")
+            string commandName = Event.current.commandName;
+
+            if (_controlID == EditorGUIUtility.GetObjectPickerControlID())
             {
-                ReferencedObject = (T)EditorGUIUtility.GetObjectPickerObject();
+                if (commandName == "ObjectSelectorUpdated" || commandName == "ObjectSelectorClosed")
+                {
+                    GameObject = EditorGUIUtility.GetObjectPickerObject() as GameObject;
+
+                    if (GameObject.IsNullOrDestroyed())
+                    {
+                        ReferencedObject = null;
+                        LowlineField();
+                    }
+                    else
+                    {
+                        ReferencedObject = GameObject.GetComponent<T>();
+                        DragPerformOnField(ReferencedObject);
+                    }
+                }
             }
         }
 
@@ -111,7 +129,9 @@ namespace YNL.Editors.Visuals
 
         public void PointerDownOnSelection()
         {
-            EditorGUIUtility.ShowObjectPicker<T>(null, true, "", 0);
+            _controlID = GUIUtility.GetControlID(FocusType.Passive);
+
+            EditorGUIUtility.ShowObjectPicker<T>(GameObject, true, "", _controlID);
         }
         public void PointerEnterOnSelection()
         {

@@ -1,6 +1,7 @@
 .Main
 {
 	background-color: transparent;
+
 	border-color: transparent;
 
 	max-width: 200%;
@@ -30,7 +31,7 @@
 
 .Field
 {
-	width: auto;
+	width: 60%;
 
 	margin: 0px;
 	margin-right: 2.5px;
@@ -45,7 +46,7 @@
 
 	background-color: #282828;
 
-	border-radius: 0px;
+	border-radius: 2.5px;
 	border-width: 1px;
 	border-color: #282828;
 
@@ -55,4 +56,10 @@
 .Input_Enter
 {
 	border-color: #5f5f5f;
+}
+.Input_ReadOnly
+{
+	background-color: #2D2D2D;
+
+	color: #808080;
 }

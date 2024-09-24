@@ -13,9 +13,11 @@ namespace YNL.Editors.Visuals
     {
         private const string _styleSheet = "Style Sheets/Elements/Repainted/Property Fields/RepaintedEnumField";
 
-        private EnumField _field;
+        public EnumField Field;
         private VisualElement _labelField;
+        public VisualElement Label => _labelField;
         private VisualElement _enumField;
+        public VisualElement Enum => _enumField;
 
         public RepaintedEnumField(SerializedProperty serializedObject, string name) : base()
         {
@@ -23,13 +25,13 @@ namespace YNL.Editors.Visuals
 
             Type type = MType.GetTypeIgnoreAssembly(name);
 
-            _field = new EnumField(serializedObject.name.AddSpaces(), (Enum)Activator.CreateInstance(type)).AddClass("Field", "unity-base-field__aligned");
-            _enumField = _field.Q(classes: "unity-enum-field__input").AddClass("Input");
-            _labelField = _field.Q(classes: "unity-label").AddClass("Label");
+            Field = new EnumField(serializedObject.name.AddSpaces(), (Enum)Activator.CreateInstance(type)).AddClass("Field", "unity-base-field__aligned");
+            _enumField = Field.Q(classes: "unity-enum-field__input").AddClass("Input");
+            _labelField = Field.Q(classes: "unity-label").AddClass("Label");
 
-            this.AddElements(_field);
+            this.AddElements(Field);
 
-            _field.BindProperty(serializedObject);
+            Field.BindProperty(serializedObject);
 
             this.RegisterCallback<MouseEnterEvent>(OnMouseEnter);
             this.RegisterCallback<MouseLeaveEvent>(OnMouseLeave);
@@ -56,7 +58,7 @@ namespace YNL.Editors.Visuals
 
             _labelField.SetTextAlign(TextAnchor.UpperLeft);
 
-            _field.SetFlexDirection(FlexDirection.Column);
+            Field.SetFlexDirection(FlexDirection.Column);
 
             return this;
         }

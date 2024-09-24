@@ -15,22 +15,4 @@ MonoBehaviour:
   CurrentWindow: 1
   AnimationObjectRenamer:
     IsAutomaticOn: 1
-    AutomaticLogs:
-    - Event: 3
-      IsSucceeded: 0
-      CurrentTime: '<color=#96ffdc>9/24/2024</color>
-
-        3:02:00 PM'
-      OldNames:
-      - <color=#ffef70><color=#ffef70><color=#ffef70>2.1.2</color></color></color>
-      NewNames:
-      - 2.1.2
-    - Event: 3
-      IsSucceeded: 0
-      CurrentTime: '<color=#96ffdc>9/24/2024</color>
-
-        3:03:10 PM'
-      OldNames:
-      - <color=#ffef70><color=#ffef70>2.1.2</color></color>
-      NewNames:
-      - 2.1.2
+    AutomaticLogs: []
