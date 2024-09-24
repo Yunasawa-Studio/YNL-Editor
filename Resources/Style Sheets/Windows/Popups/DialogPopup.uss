@@ -30,7 +30,7 @@
 	width: 75px;
 	height: 100%;
 
-	background-image: resource("Textures/Windows/Animation Center/Cracking Bone");
+	background-image: resource("Textures/Animation Repathing/Cracking Bone");
 	background-size: 75%;
 	background-position: 10px 10px;
 
