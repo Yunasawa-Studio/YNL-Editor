@@ -64,7 +64,7 @@
 	top: 5px;
 
 	font-size: 13px;
-	-unity-font-style: none;
+	-unity-font-style: normal;
 	-unity-font-definition: var(--font-genshin);
 
 	position: absolute;
@@ -85,7 +85,7 @@
 	top: 20px;
 
 	font-size: 10px;
-	-unity-font-style: none;
+	-unity-font-style: normal;
 	-unity-font-definition: var(--font-genshin);
 
 	position: absolute;
