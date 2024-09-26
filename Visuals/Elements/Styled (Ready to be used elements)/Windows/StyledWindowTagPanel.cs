@@ -25,11 +25,6 @@ namespace YNL.Editors.Visuals
         public Label Subtitle = new Label();
         public ScrollView Scroll = new ScrollView();
 
-        public Image TutorialBackground = new Image();
-        public Button Tutorial = new Button();
-        public Image TutorialIcon = new Image();
-        public Label TutorialLabel = new Label("Instruction");
-
         public StyledWindowTag[] Tags = new StyledWindowTag[0];
 
         private int _selectedTag = 0;
@@ -45,12 +40,7 @@ namespace YNL.Editors.Visuals
 
             TitleBackground.AddClass(_uss_titleBackground).AddElements(Icon, Title, Subtitle);
 
-            TutorialIcon.AddClass("TutorialIcon");
-            TutorialLabel.AddClass("TutorialLabel");
-            Tutorial.AddClass("Tutorial").AddElements(TutorialIcon, TutorialLabel);
-            TutorialBackground.AddClass("TutorialBackground").AddElements(Tutorial);
-
-            this.AddClass(_uss_panelBackground).AddElements(TitleBackground, TutorialBackground).AddSpace(0, 100);
+            this.AddClass(_uss_panelBackground).AddElements(TitleBackground).AddSpace(0, 100);
 
             Tags = tags;
 
@@ -77,10 +67,6 @@ namespace YNL.Editors.Visuals
             Title.EnableClass(true, _uss_titleHover);
             Subtitle.EnableClass(true, _uss_subtitleHover);
 
-            Tutorial.EnableClass(true, "Tutorial".ECustom("Enter"));
-            TutorialIcon.EnableClass(true, "TutorialIcon".ECustom("Enter"));
-            TutorialLabel.EnableClass(true, "TutorialLabel".ECustom("Enter"));
-
             foreach (var tag in Tags) tag.OnExpand();
         }
         public override void PointerExit()
@@ -90,10 +76,6 @@ namespace YNL.Editors.Visuals
             Icon.EnableClass(false, _uss_iconHover);
             Title.EnableClass(false, _uss_titleHover);
             Subtitle.EnableClass(false, _uss_subtitleHover);
-
-            Tutorial.EnableClass(false, "Tutorial".ECustom("Enter"));
-            TutorialIcon.EnableClass(false, "TutorialIcon".ECustom("Enter"));
-            TutorialLabel.EnableClass(false, "TutorialLabel".ECustom("Enter"));
 
             foreach (var tag in Tags) tag.OnCollape();
         }
