@@ -178,6 +178,11 @@ namespace YNL.Editors.Extensions
             target.style.left = value;
             return target;
         }
+        public static T SetRight<T>(this T target, float value) where T : VisualElement
+        {
+            target.style.right = value;
+            return target;
+        }
         #endregion
 
         #region X Element Style - Overflow
@@ -726,6 +731,12 @@ namespace YNL.Editors.Extensions
 
     public static class EProperty
     {
+        public static T SetAsReadOnly<T>(this T element, bool isReadOnly = true) where T : VisualElement
+        {
+            element.SetEnabled(!isReadOnly);
+            return element;
+        }
+
         public static T SetText<T>(this T element, string text) where T : TextField
         {
             element.value = text;

@@ -24,6 +24,7 @@
 
 	margin: 0px;
 
+	padding: 0px;
 	padding-left: 7.5px;
 
 	-unity-text-align: middle-left; 

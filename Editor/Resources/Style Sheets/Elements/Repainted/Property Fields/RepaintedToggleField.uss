@@ -4,24 +4,30 @@
 	
 	border-color: transparent;
 
-	width: auto;
-	height: 20px;
+	max-width: 200%;
 
 	margin-top: 0px;
 	margin-bottom: 1.5px;
-	margin-left: 3px;
+	margin-left: -2.5px;
+	margin-right: -2.5px;
 
 	justify-content: center;
 
 	flex-shrink: 1;
-	flex-grow: 1;
 
 	flex-direction: row;
 }
 
 .Label
 {
-	-unity-text-align: middle-left; 
+	width: 40%;
+
+	margin: 0px;
+
+	padding: 0px;
+	padding-left: 7.5px;
+
+	-unity-text-align: middle-left;
 }
 
 .Field
@@ -29,6 +35,7 @@
 	width: 100%;
 
 	margin: 0px;
+	margin-right: 2.5px;
 
 	flex-grow: 1;
 }
@@ -49,6 +56,8 @@
 
 	width: 17.5px;
 	height: 17.5px;
+
+	margin: 0px;
 }
 
 .Checkmark_Enter

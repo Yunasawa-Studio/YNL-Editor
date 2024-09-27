@@ -67,6 +67,11 @@ namespace YNL.Editors.Visuals
             this.AddElements(_flexTitle.SetTitle(title));
             return this;
         }
+        public StyledComponentHeader SetTitle(string title)
+        {
+            _flexTitle.SetTitle(title);
+            return this;
+        }
         public StyledComponentHeader AddDocumentation(string href)
         {
             _flexTitle.AddDocumentation(href);

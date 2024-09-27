@@ -43,18 +43,6 @@ namespace YNL.Editors.Visuals
         {
             _inputField.DisableClass("Input_Enter");
         }
-
-        public RepaintedTextField SetAsReadOnly()
-        {
-            Field.isReadOnly = true;
-            _inputField.EnableClass("Input_ReadOnly");
-            _labelField.SetColor("#808080");
-
-            this.UnregisterCallback<MouseEnterEvent>(OnMouseEnter);
-            this.UnregisterCallback<MouseLeaveEvent>(OnMouseLeave);
-
-            return this;
-        }
     }
 }
 #endif

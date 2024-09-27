@@ -20,6 +20,8 @@
 
 	transition-property: -unity-background-image-tint-color;
 	transition-duration: 0.25s;
+
+	padding: 0px;
 }
 .Background:hover
 {
@@ -41,12 +43,13 @@
 	border-radius: 10px;
 
 	width: 15px;
-	height: 15px;
+	height: 17.5px;
 
 	left: 0px;
 
 	margin-top: 2.5px;
 	margin-left: 2.5px;
+	margin-bottom: 2.5px;
 
 	transition-property: left;
 	transition-duration: 0.15s;

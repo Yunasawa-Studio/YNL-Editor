@@ -12,8 +12,8 @@ namespace YNL.Editors.Visuals
         private const string _styleSheet = "Style Sheets/Elements/Repainted/Property Fields/RepaintedToggleField";
 
         public Toggle Field;
-        private VisualElement LabelField;
-        private VisualElement Checkmark;
+        public VisualElement LabelField;
+        public VisualElement Checkmark;
 
         public RepaintedToggleField(SerializedProperty serializedObject) : base()
         {
