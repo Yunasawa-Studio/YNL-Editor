@@ -1,11 +1,10 @@
-#if YNL_CREATOR
+#if !YNL_CREATOR
 using System;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
-using YNL.Extensions.Methods;
 
 namespace YNL.Editors.Setups
 {
@@ -48,7 +47,7 @@ namespace YNL.Editors.Setups
 
         private static void TryInstallPackage(PackageCollection packages, string name, string url, string version)
         {
-            if (packages.IsNull())
+            if (packages == null)
             {
                 Debug.LogError("Package collection is null");
                 return;
