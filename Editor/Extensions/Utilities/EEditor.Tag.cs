@@ -1,4 +1,4 @@
-#if UNITY_EDITOR && YNL_UTILITIES
+#if YNL_UTILITIES
 using System.Linq;
 using UnityEditorInternal;
 using YNL.Extensions.Methods;

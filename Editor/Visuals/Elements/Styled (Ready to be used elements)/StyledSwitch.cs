@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+#if UNITY_EDITOR && YNL_UTILITIES
 using System;
 using UnityEngine.UIElements;
 using YNL.Editors.Extensions;

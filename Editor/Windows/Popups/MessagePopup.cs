@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+#if UNITY_EDITOR && YNL_UTILITIES
 using System.Reflection;
 using System;
 using UnityEditor;

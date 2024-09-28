@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Reflection;
 using UnityEngine.UIElements;
 
@@ -20,3 +21,4 @@ namespace YNL.Editors.Extensions
         }
     }
 }
+#endif
