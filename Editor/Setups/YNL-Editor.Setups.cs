@@ -1,9 +1,11 @@
-#if !YNL_CREATOR
+#if YNL_CREATOR
 using System;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
+using UnityEngine;
+using YNL.Extensions.Methods;
 
 namespace YNL.Editors.Setups
 {
@@ -24,10 +26,8 @@ namespace YNL.Editors.Setups
             }
         }
 
-        [InitializeOnLoadMethod]
         private static void InitializeOnLoad()
         {
-            _request = Client.List();
             EditorApplication.update += OnEditorApplicationUpdate;
             EditorDefineSymbols.AddSymbols("YNL_EDITOR");
         }
@@ -36,11 +36,24 @@ namespace YNL.Editors.Setups
         {
             EditorApplication.update -= OnEditorApplicationUpdate;
 
-            TryInstallPackage(Client.List().Result, "com.yunasawa.ynl.utilities", "https://github.com/Yunasawa/YNL-Utilities.git", "1.5.1");
+            _request = Client.List();
+            while (!_request.IsCompleted) { }
+
+            if (_request.Status == StatusCode.Success)
+            {
+                TryInstallPackage(Client.List().Result, "com.yunasawa.ynl.utilities", "https://github.com/Yunasawa/YNL-Utilities.git", "1.5.2");
+            }
+            else Debug.LogWarning("Failed to list packages: " + _request.Error.message);
         }
 
         private static void TryInstallPackage(PackageCollection packages, string name, string url, string version)
         {
+            if (packages.IsNull())
+            {
+                Debug.LogError("Package collection is null");
+                return;
+            }
+
             foreach (var package in packages)
             {
                 if (package.name == name)
