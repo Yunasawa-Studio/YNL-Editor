@@ -40,7 +40,7 @@ namespace YNL.Editors.Setups
 
             if (_request.Status == StatusCode.Success)
             {
-                TryInstallPackage(Client.List().Result, "com.yunasawa.ynl.utilities", "https://github.com/Yunasawa/YNL-Utilities.git", "1.5.2");
+                TryInstallPackage(_request.Result, "com.yunasawa.ynl.utilities", "https://github.com/Yunasawa/YNL-Utilities.git", "1.5.2");
             }
             else Debug.LogWarning("Failed to list packages: " + _request.Error.message);
         }
