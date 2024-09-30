@@ -1,34 +1,21 @@
-#if !YNL_CREATOR
-using System;
-using System.Linq;
 using UnityEditor;
-using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
-using UnityEngine;
+using UnityEditor.PackageManager;
+using YNL.Editors.Setups;
 
 namespace YNL.Editors.Setups
 {
-    public class Setups : AssetPostprocessor
+    [InitializeOnLoad]
+    public class Setups
     {
+        public const string DependenciesKey = "YNL - Editor | dependencies";
+
         private static ListRequest _request;
+        public static bool Dependencies;
 
-        private static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
+        static Setups()
         {
-            var inPackages = importedAssets.Any(path => path.StartsWith("Packages/")) ||
-                deletedAssets.Any(path => path.StartsWith("Packages/")) ||
-                movedAssets.Any(path => path.StartsWith("Packages/")) ||
-                movedFromAssetPaths.Any(path => path.StartsWith("Packages/"));
-
-            if (inPackages)
-            {
-                InitializeOnLoad();
-            }
-        }
-
-        private static void InitializeOnLoad()
-        {
-            //EditorApplication.update += OnEditorApplicationUpdate;
-            EditorDefineSymbols.AddSymbols("YNL_EDITOR");
+            EditorApplication.update += OnEditorApplicationUpdate;
         }
 
         private static void OnEditorApplicationUpdate()
@@ -40,50 +27,26 @@ namespace YNL.Editors.Setups
 
             if (_request.Status == StatusCode.Success)
             {
-                TryInstallPackage(_request.Result, "com.yunasawa.ynl.utilities", "https://github.com/Yunasawa/YNL-Utilities.git", "1.5.2");
+                Dependencies = false;
+
+                IsPackageInstalled(_request.Result, "com.yunasawa.ynl.utilities", ref Dependencies);
             }
-            else Debug.LogWarning("Failed to list packages: " + _request.Error.message);
+
+            bool dependenciesResolver = EditorPrefs.GetBool(DependenciesKey);
+
+            if ((!Dependencies) && !dependenciesResolver) Packages.ShowWindow();
+
+            EditorPrefs.SetBool(DependenciesKey, true);
         }
 
-        private static void TryInstallPackage(PackageCollection packages, string name, string url, string version)
+        private static void IsPackageInstalled(PackageCollection packages, string name, ref bool checker)
         {
-            if (packages == null)
-            {
-                Debug.LogError("Package collection is null");
-                return;
-            }
+            if (packages == null) return;
 
             foreach (var package in packages)
             {
-                if (package.name == name)
-                {
-                    if (IsNewerThan(version, package.version))
-                    {
-                        Client.Add($"{url}#{version}");
-                        return;
-                    }
-                    else return;
-                }
+                if (package.name == name) checker = true;
             }
-
-            Client.Add($"{url}#{version}");
-        }
-        public static bool IsNewerThan(string currentVersion, string newVersion)
-        {
-            var currentParts = currentVersion.Split('.');
-            var newParts = newVersion.Split('.');
-
-            for (int i = 0; i < Math.Max(currentParts.Length, newParts.Length); i++)
-            {
-                int currentPart = i < currentParts.Length ? int.Parse(currentParts[i]) : 0;
-                int newPart = i < newParts.Length ? int.Parse(newParts[i]) : 0;
-
-                if (newPart > currentPart) return true;
-                else if (newPart < currentPart) return false;
-            }
-
-            return false;
         }
     }
 }
-#endif

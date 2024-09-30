@@ -1,0 +1,165 @@
+.Main
+{
+	border-color: #5f5f5f;
+	border-width: 1px;
+
+	padding: 0px;
+}
+
+.Bar
+{
+	background-color: #252525;
+	border-width: 1px;
+	border-color: #5f5f5f;
+	border-radius: 0px;
+
+	height: 20px;
+
+	margin-top: -1px;
+	margin-right: -1px;
+	margin-left: -1px;
+
+	padding: 0px;
+}
+
+.BarClose
+{
+	background-color: #252525;
+	background-image: resource("Textures/X");
+
+	border-width: 1px;
+	border-color: #5f5f5f;
+	border-radius: 0px;
+
+	background-size: 60%;
+
+	width: 20px;
+	height: 20px;
+
+	margin: 0px;
+	margin-top: -1px;
+	margin-right: -1px;
+
+	padding: 0px;
+
+	align-self: flex-end;
+
+	transition-duration: 0.2s;
+}
+.BarClose:hover
+{
+	background-color: #520702;
+}
+
+.BarLabel
+{
+	height: 20px;
+
+	position: absolute;
+
+	margin: 0px;
+	margin-top: -1px;
+	margin-left: 5px;
+
+	padding: 0px;
+
+	-unity-text-align: middle-center;
+	-unity-font-style: bold;
+	font-size: 12px;
+}
+
+.Title
+{
+	background-color: transparent;
+
+	height: 20px;
+
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+
+	-unity-text-align: middle-left;
+	-unity-font-style: bold;
+	font-size: 12px;
+}
+
+.PackageBox
+{
+	background-color: #383838;
+
+	border-width: 1px;
+	border-color: #4f4f4f;
+
+	flex-direction: row;
+
+	height: 20px;
+
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: -1px;
+}
+.PackageBox:hover
+{
+	background-color: #2d2d2d;
+}
+
+.PackageLabel
+{
+	-unity-text-align: middle-left;
+	-unity-font-style: bold;
+}
+
+.PackageStatus
+{
+	background-color: transparent;
+
+	background-size: 60%;
+
+	border-width: 0px;
+
+	width: 20px;
+	height: 20px;
+
+	margin: 0px;
+
+	padding: 0px;
+}
+
+.PackageType
+{
+	height: 20px;
+
+	position: absolute;
+
+	top: -1px;
+	right: 0px;
+
+	-unity-text-align: middle-left;
+	-unity-font-style: bold;
+	font-size: 10px;
+
+	color: #7f7f7f;
+}
+
+.ButtonBar
+{
+	height: 20px;
+
+	margin-left: 5px;
+	margin-right: 5px;
+
+	flex-direction: row;
+}
+
+.Button
+{
+	border-radius: 0px;
+
+	margin: 0px;
+
+	flex-grow: 1;
+
+	-unity-font-style: bold;
+
+	color: #123123;
+}
