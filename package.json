@@ -1,7 +1,7 @@
 {
     "name": "com.yunasawa.ynl.editor",
     "displayName": "YNL - Editor",
-    "version": "2.0.10",
+    "version": "2.0.11",
     "unity": "2022.3",
     "description": "Enhance your Unity Editor experience with this library. It provides essential extensions and interfaces specifically designed for the Editor environment.",
     "keywords": [
@@ -18,6 +18,6 @@
     },
     "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.2.1",
-        "com.yunasawa.ynl.utilities": "https://github.com/Yunasawa/YNL-Utilities.git"
+        "com.yunasawa.ynl.utilities": "https://github.com/Yunasawa/YNL-Utilities.git#1.5.2"
     }
 }
