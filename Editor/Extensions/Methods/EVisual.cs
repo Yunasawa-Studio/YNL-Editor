@@ -1,4 +1,5 @@
 ﻿#if UNITY_EDITOR && YNL_UTILITIES
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -752,6 +753,12 @@ namespace YNL.Editors.Extensions
         public static T SetHyperlink<T>(this T element, string link) where T : Button
         {
             element.clicked += () => Application.OpenURL(link);
+            return element;
+        }
+
+        public static T AddAction<T>(this T element, Action action) where T : Button
+        {
+            element.clicked += action;
             return element;
         }
     }
