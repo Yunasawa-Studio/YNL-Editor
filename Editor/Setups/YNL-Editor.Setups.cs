@@ -1,3 +1,4 @@
+#if !YNL_CREATOR
 using UnityEditor;
 using UnityEditor.PackageManager.Requests;
 using UnityEditor.PackageManager;
@@ -37,6 +38,8 @@ namespace YNL.Editors.Setups
             if ((!Dependencies) && !dependenciesResolver) Packages.ShowWindow();
 
             EditorPrefs.SetBool(DependenciesKey, true);
+
+            EditorDefineSymbols.AddSymbols("YNL_UTILITIES");
         }
 
         private static void IsPackageInstalled(PackageCollection packages, string name, ref bool checker)
@@ -50,3 +53,4 @@ namespace YNL.Editors.Setups
         }
     }
 }
+#endif
