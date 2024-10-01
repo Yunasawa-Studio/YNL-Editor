@@ -1,7 +1,7 @@
 {
     "name": "com.yunasawa.ynl.editor",
     "displayName": "YNL - Editor",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "unity": "2022.3",
     "description": "Enhance your Unity Editor experience with this library. It provides essential extensions and interfaces specifically designed for the Editor environment.",
     "keywords": [
