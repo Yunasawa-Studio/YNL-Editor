@@ -39,7 +39,7 @@ namespace YNL.Editors.Setups
 
             EditorPrefs.SetBool(DependenciesKey, true);
 
-            EditorDefineSymbols.AddSymbols("YNL_UTILITIES");
+            EditorDefineSymbols.AddSymbols("YNL_EDITOR");
         }
 
         private static void IsPackageInstalled(PackageCollection packages, string name, ref bool checker)
