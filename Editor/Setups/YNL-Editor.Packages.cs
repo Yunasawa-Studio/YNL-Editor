@@ -124,7 +124,7 @@ namespace YNL.Editors.Setups
             Debug.Log("<b><color=#c5ffb0>This process can take minutes, be patient and please wait until everything is done!</color></b>");
 
             _packagesToInstall.Enqueue("https://github.com/Yunasawa/YNL-Utilities.git#1.5.2");
-            _packagesToInstall.Enqueue("https://github.com/Yunasawa-Studio/YNL-Editor.git#2.0.9");
+            _packagesToInstall.Enqueue("https://github.com/Yunasawa-Studio/YNL-Editor.git#2.0.14");
 
             InstallNextPackage();
         }
@@ -233,7 +233,7 @@ namespace YNL.Editors.Setups
 
         public PackageBox(string label, bool status)
         {
-            StyleSheet styleSheet = Resources.Load<StyleSheet>("Packages/Package");
+            StyleSheet styleSheet = Resources.Load<StyleSheet>("Style Sheets/Packages/Package");
 
             this.styleSheets.Add(styleSheet);
             this.AddToClassList("PackageBox");
