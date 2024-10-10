@@ -21,7 +21,7 @@ namespace YNL.Editors.Setups
         private static AddRequest _addRequest;
         private static RemoveRequest _removeRequest;
 
-        [MenuItem("🔗 YのL/▷ YNL - Editor/🌐 Package Installer")]
+        [MenuItem("YのL/YNL - Editor/Package Installer")]
         public static void ShowWindow()
         {
             if (_instance != null) return;

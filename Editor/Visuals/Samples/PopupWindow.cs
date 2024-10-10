@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -45,6 +46,7 @@ namespace YNL.Editors.Visuals
             if (!_closeOnLostFocus) return;
 
             _instance.Close();
+            _instance = null;
         }
 
         protected virtual void Initialize(params object[] parameters) { }
