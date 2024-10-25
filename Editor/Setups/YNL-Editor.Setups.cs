@@ -1,7 +1,7 @@
+#if UNITY_EDITOR && UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.PackageManager.Requests;
 using UnityEditor.PackageManager;
-using UnityEngine;
 using System.Linq;
 
 namespace YNL.Editors.Setups
@@ -60,3 +60,4 @@ namespace YNL.Editors.Setups
         }
     }
 }
+#endif

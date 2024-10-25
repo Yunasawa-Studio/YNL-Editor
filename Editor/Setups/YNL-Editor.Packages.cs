@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿#if UNITY_EDITOR && UNITY_EDITOR
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
@@ -253,3 +254,4 @@ namespace YNL.Editors.Setups
         }
     }
 }
+#endif
