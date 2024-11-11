@@ -147,17 +147,6 @@ namespace YNL.Editors.Extensions
 
         #endregion
 
-        #region ▶ Element Style - Tooltip
-        public static T SetTooltip<T>(this T element, string tooltip) where T : VisualElement
-        {
-            element.tooltip = tooltip;
-            return element;
-        }
-
-        public static string GetTooltip<T>(this T element) where T : VisualElement
-            => element.tooltip;
-        #endregion
-
         #region ▶ Element Style - Space
 
         public static T AddSpace<T>(this T target, float width, float height) where T : VisualElement =>
