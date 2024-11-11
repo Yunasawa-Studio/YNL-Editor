@@ -147,8 +147,15 @@ namespace YNL.Editors.Extensions
 
         #endregion
 
-        #region X Element Style - Tooltip
+        #region ▶ Element Style - Tooltip
+        public static T SetTooltip<T>(this T element, string tooltip) where T : VisualElement
+        {
+            element.tooltip = tooltip;
+            return element;
+        }
 
+        public static string GetTooltip<T>(this T element) where T : VisualElement
+            => element.tooltip;
         #endregion
 
         #region ▶ Element Style - Space
@@ -164,30 +171,56 @@ namespace YNL.Editors.Extensions
 
         #endregion
 
-        #region X Element Style - Picking Mode
+        #region ▶ Element Style - Picking Mode
+        public static T SetPickingMode<T>(this T element, PickingMode mode) where T : VisualElement
+        {
+            element.pickingMode = mode;
+            return element;
+        }
 
+        public static PickingMode GetPickingMode<T>(this T element) where T : VisualElement
+        {
+            return element.pickingMode;
+        }
         #endregion
 
-        #region X Element Style - Position
+        #region ▶ Element Style - Position
         public static T SetTop<T>(this T target, float value) where T : VisualElement
         {
             target.style.top = value;
             return target;
         }
+
         public static T SetLeft<T>(this T target, float value) where T : VisualElement
         {
             target.style.left = value;
             return target;
         }
+
         public static T SetRight<T>(this T target, float value) where T : VisualElement
         {
             target.style.right = value;
             return target;
         }
+
+        public static T SetBottom<T>(this T target, float value) where T : VisualElement
+        {
+            target.style.bottom = value;
+            return target;
+        }
         #endregion
 
-        #region X Element Style - Overflow
+        #region ▶ Element Style - Overflow
+        public static T SetOverflow<T>(this T element, Overflow value) where T : VisualElement
+        {
+            element.style.overflow = value;
+            return element;
+        }
 
+        public static Overflow GetOverflow<T>(this T element) where T : VisualElement
+        {
+            return element.style.overflow.value;
+        }
         #endregion
 
         #region ▶ Element Style - Align Self
@@ -209,16 +242,43 @@ namespace YNL.Editors.Extensions
 
         #endregion
 
-        #region X Element Style - Align Items
+        #region ▶ Element Style - Align Items
+        public static T SetAlignItems<T>(this T element, Align value) where T : VisualElement
+        {
+            element.style.alignItems = value;
+            return element;
+        }
 
+        public static Align GetAlignItems<T>(this T element) where T : VisualElement
+        {
+            return element.style.alignItems.value;
+        }
         #endregion
 
-        #region X Element Style - Align Content
+        #region ▶ Element Style - Align Content
+        public static T SetAlignContent<T>(this T element, Align value) where T : VisualElement
+        {
+            element.style.alignContent = value;
+            return element;
+        }
 
+        public static Align GetAlignContent<T>(this T element) where T : VisualElement
+        {
+            return element.style.alignContent.value;
+        }
         #endregion
 
-        #region X Element Style - Justify Content
+        #region ▶ Element Style - Justify Content
+        public static T SetJustifyContent<T>(this T element, Justify value) where T : VisualElement
+        {
+            element.style.justifyContent = value;
+            return element;
+        }
 
+        public static Justify GetJustifyContent<T>(this T element) where T : VisualElement
+        {
+            return element.style.justifyContent.value;
+        }
         #endregion
 
         #region ▶ Element Style - Flex Direction
@@ -240,25 +300,62 @@ namespace YNL.Editors.Extensions
 
         #endregion
 
-        #region X Element Style - Flex Grow
+        #region ▶ Element Style - Flex Grow
+        public static T SetFlexGrow<T>(this T element, float value) where T : VisualElement
+        {
+            element.style.flexGrow = value;
+            return element;
+        }
 
+        public static float GetFlexGrow<T>(this T element) where T : VisualElement
+        {
+            return element.style.flexGrow.value;
+        }
         #endregion
 
-        #region X Element Style - Flex Shrink
+        #region ▶ Element Style - Flex Shrink
+        public static T SetFlexShrink<T>(this T element, float value) where T : VisualElement
+        {
+            element.style.flexShrink = value;
+            return element;
+        }
 
+        public static float GetFlexShrink<T>(this T element) where T : VisualElement
+        {
+            return element.style.flexShrink.value;
+        }
         #endregion
 
-        #region X Element Style - Flex Wrap
+        #region ▶ Element Style - Flex Wrap
+        public static T SetFlexWrap<T>(this T element, Wrap value) where T : VisualElement
+        {
+            element.style.flexWrap = value;
+            return element;
+        }
 
+        public static Wrap GetFlexWrap<T>(this T element) where T : VisualElement
+        {
+            return element.style.flexWrap.value;
+        }
         #endregion
 
-        #region X Element Style - Flex Basis
+        #region ▶ Element Style - Flex Basis
+        public static T SetFlexBasis<T>(this T element, Length value) where T : VisualElement
+        {
+            element.style.flexBasis = value;
+            return element;
+        }
 
+        public static Length GetFlexBasis<T>(this T element) where T : VisualElement
+        {
+            return element.style.flexBasis.value;
+        }
         #endregion
 
-        #region X Element Style - Border Color
+        #region ▶ Element Style - Border Color
         public static T SetBorderColor<T>(this T element, string hex) where T : VisualElement
             => element.SetBorderColor(hex.ToColor());
+
         public static T SetBorderColor<T>(this T element, Color color) where T : VisualElement
         {
             element.style.borderTopColor = color;
@@ -269,8 +366,20 @@ namespace YNL.Editors.Extensions
         }
         #endregion
 
-        #region X Element Style - Border Width
+        #region ▶ Element Style - Border Width
+        public static T SetBorderWidth<T>(this T element, float value) where T : VisualElement
+        {
+            element.style.borderTopWidth = value;
+            element.style.borderBottomWidth = value;
+            element.style.borderLeftWidth = value;
+            element.style.borderRightWidth = value;
+            return element;
+        }
 
+        public static float GetBorderWidth<T>(this T element) where T : VisualElement
+        {
+            return element.style.borderTopWidth.value; // Assuming all sides are the same
+        }
         #endregion
 
         #region ▶ Element Style - Border Radius
@@ -319,10 +428,10 @@ namespace YNL.Editors.Extensions
 
         #endregion
 
-        #region X Element Style - Background Color
-
+        #region ▶ Element Style - Background Color
         public static T SetBackgroundColor<T>(this T element, string hex) where T : VisualElement
             => element.SetBackgroundColor(hex.ToColor());
+
         public static T SetBackgroundColor<T>(this T element, Color color) where T : VisualElement
         {
             element.style.backgroundColor = color;
@@ -331,11 +440,19 @@ namespace YNL.Editors.Extensions
 
         public static Color GetBackgroundColor<T>(this T element) where T : VisualElement
             => element.resolvedStyle.backgroundColor;
-
         #endregion
 
-        #region X Element Style - Opacity
+        #region ▶ Element Style - Opacity
+        public static T SetOpacity<T>(this T element, float value) where T : VisualElement
+        {
+            element.style.opacity = value;
+            return element;
+        }
 
+        public static float GetOpacity<T>(this T element) where T : VisualElement
+        {
+            return element.resolvedStyle.opacity;
+        }
         #endregion
 
         #region ▶ Element Style - Height
@@ -506,13 +623,13 @@ namespace YNL.Editors.Extensions
 
         #endregion
 
-        #region X Element Style - Unity Background Image Tint Color
-
+        #region ▶ Element Style - Unity Background Image Tint Color
         public static T SetBackgroundImageTintColor<T>(this T element, Color color) where T : VisualElement
         {
             element.style.unityBackgroundImageTintColor = color;
             return element;
         }
+
         public static T SetBackgroundImageTintColor<T>(this T element, string color) where T : VisualElement
             => element.SetBackgroundImageTintColor(color.ToColor());
 
@@ -522,8 +639,50 @@ namespace YNL.Editors.Extensions
         }
         #endregion
 
-        #region X Element Style - Unity Slice
+        #region ▶ Element Style - Unity Slice
+        public static T SetSliceLeft<T>(this T element, int value) where T : VisualElement
+        {
+            element.style.unitySliceLeft = value;
+            return element;
+        }
 
+        public static T SetSliceTop<T>(this T element, int value) where T : VisualElement
+        {
+            element.style.unitySliceTop = value;
+            return element;
+        }
+
+        public static T SetSliceRight<T>(this T element, int value) where T : VisualElement
+        {
+            element.style.unitySliceRight = value;
+            return element;
+        }
+
+        public static T SetSliceBottom<T>(this T element, int value) where T : VisualElement
+        {
+            element.style.unitySliceBottom = value;
+            return element;
+        }
+
+        public static float GetSliceLeft<T>(this T element) where T : VisualElement
+        {
+            return element.resolvedStyle.unitySliceLeft;
+        }
+
+        public static float GetSliceTop<T>(this T element) where T : VisualElement
+        {
+            return element.resolvedStyle.unitySliceTop;
+        }
+
+        public static float GetSliceRight<T>(this T element) where T : VisualElement
+        {
+            return element.resolvedStyle.unitySliceRight;
+        }
+
+        public static float GetSliceBottom<T>(this T element) where T : VisualElement
+        {
+            return element.resolvedStyle.unitySliceBottom;
+        }
         #endregion
 
         #region ▶ Element Style - Color
@@ -547,8 +706,17 @@ namespace YNL.Editors.Extensions
 
         #endregion
 
-        #region X Element Style - White Space
+        #region ▶ Element Style - White Space
+        public static T SetWhiteSpace<T>(this T element, WhiteSpace value) where T : VisualElement
+        {
+            element.style.whiteSpace = value;
+            return element;
+        }
 
+        public static WhiteSpace GetWhiteSpace<T>(this T element) where T : VisualElement
+        {
+            return element.resolvedStyle.whiteSpace;
+        }
         #endregion
 
         #region ▶ Element Style - Unity Font Definition
