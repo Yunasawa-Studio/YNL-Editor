@@ -1,9 +1,11 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.UIElements;
-using UnityEngine;
-using UnityEngine.UIElements;
 using YNL.Editors.Extensions;
 using YNL.Editors.Visuals;
+#endif
+using UnityEngine;
+using UnityEngine.UIElements;
 using YNL.Extensions.Addons;
 
 public abstract class StyledComponent : MonoBehaviour
@@ -18,6 +20,7 @@ public abstract class StyledComponent : MonoBehaviour
     public abstract void Initialize();
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(StyledComponent), true)]
 public class StyledComponentDrawer : Editor
 {
@@ -49,3 +52,4 @@ public class StyledComponentDrawer : Editor
         return root;
     }
 }
+#endif
