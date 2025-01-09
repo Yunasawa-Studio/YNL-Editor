@@ -1,8 +1,8 @@
 #if UNITY_EDITOR && YNL_UTILITIES
 using UnityEngine;
 using UnityEngine.UIElements;
-using YNL.Extensions.Methods;
-using YNL.Extensions.Addons;
+using YNL.Utilities.Extensions;
+using YNL.Utilities.Addons;
 using YNL.Editors.Extensions;
 
 namespace YNL.Editors.Visuals

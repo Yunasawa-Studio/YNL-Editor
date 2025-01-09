@@ -1,7 +1,7 @@
 #if YNL_UTILITIES && UNITY_EDITOR
 using System.Linq;
 using UnityEditorInternal;
-using YNL.Extensions.Methods;
+using YNL.Utilities.Extensions;
 
 namespace YNL.Editors.Extensions
 {

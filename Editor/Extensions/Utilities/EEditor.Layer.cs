@@ -1,6 +1,6 @@
 #if YNL_UTILITIES && UNITY_EDITOR
 using UnityEditor;
-using YNL.Extensions.Methods;
+using YNL.Utilities.Extensions;
 
 namespace YNL.Editors.Extensions
 {

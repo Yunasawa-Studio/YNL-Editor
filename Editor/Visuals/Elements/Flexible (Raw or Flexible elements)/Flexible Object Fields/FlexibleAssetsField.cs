@@ -2,7 +2,7 @@
 using System;
 using UnityEditor;
 using UnityEngine.UIElements;
-using YNL.Extensions.Methods;
+using YNL.Utilities.Extensions;
 
 namespace YNL.Editors.Visuals
 {

@@ -90,7 +90,7 @@ namespace YNL.Editors.Visuals
         }
         public RepaintedInputField<T> SetFontDefinition(FontAsset font)
         {
-            _labelField.SetFontDefinition(font);
+            _labelField.SetFont(font);
 
             return this;
         }

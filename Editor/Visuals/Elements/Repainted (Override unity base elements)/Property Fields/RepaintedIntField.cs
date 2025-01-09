@@ -1,7 +1,7 @@
 #if UNITY_EDITOR && YNL_UTILITIES
 using UnityEditor;
 using UnityEngine.UIElements;
-using YNL.Extensions.Methods;
+using YNL.Utilities.Extensions;
 using YNL.Editors.Extensions;
 
 namespace YNL.Editors.Visuals

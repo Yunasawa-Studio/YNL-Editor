@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using YNL.Extensions.Methods;
+using YNL.Utilities.Extensions;
 using System.Linq;
 
 namespace YNL.Editors.Extensions

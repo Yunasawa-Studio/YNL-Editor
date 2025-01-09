@@ -6,7 +6,7 @@ using YNL.Editors.Visuals;
 #endif
 using UnityEngine;
 using UnityEngine.UIElements;
-using YNL.Extensions.Addons;
+using YNL.Utilities.Addons;
 
 public abstract class StyledComponent : MonoBehaviour
 {
