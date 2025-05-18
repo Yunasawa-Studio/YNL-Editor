@@ -124,7 +124,7 @@ namespace YNL.Editors.Setups
         {
             Debug.Log("<b><color=#c5ffb0>This process can take minutes, be patient and please wait until everything is done!</color></b>");
 
-            _packagesToInstall.Enqueue("https://github.com/Yunasawa/YNL-Utilities.git#1.5.2");
+            _packagesToInstall.Enqueue("https://github.com/Yunasawa/YNL-Utilities.git#1.7.1");
 
             InstallNextPackage();
         }
